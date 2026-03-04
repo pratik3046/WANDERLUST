@@ -118,10 +118,10 @@ passport.deserializeUser(User.deserializeUser());
 
 
 app.use((req, res, next) => {
-    res.locals.success = req.flash("success")
-    res.locals.error = req.flash("error")
-    res.locals.currUser = req.user || null  // Ensure it's always defined
-    res.locals.searchQuery = ''  // Default empty search query
+    res.locals.success = req.flash("success") || []
+    res.locals.error = req.flash("error") || []
+    res.locals.currUser = req.user || null
+    res.locals.searchQuery = req.query.search || ''
     next()
 })
 
