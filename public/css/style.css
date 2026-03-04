@@ -1,0 +1,400 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+ 
+}
+
+.container{
+    flex: 1;
+}
+
+
+.navbar{
+    height: 4rem;
+    background-color: white;
+}
+
+.navbar .container-fluid {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.fa-compass {
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: rgb(0, 0, 0) !important;
+}
+
+/* footer */
+
+.f-info-links a{
+    text-decoration: none;
+    color: black;
+}
+
+.f-info-links a:hover{
+ text-decoration: underline;
+}
+
+.f-info-links,.f-info-brand,.f-info-socials{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-info-socials i{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: rgba(174, 169, 169, 0.579);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+
+/* card effect*/
+
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* card */
+
+.listing-card{
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 2rem;
+    border-radius: 1rem !important;
+    object-fit: cover !important;
+    
+}
+
+
+.card-img-top{
+border-radius: 1rem !important;
+width: 100% !important;
+object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0 !important;
+}
+
+.card-text-body p{
+    font-weight: 400 !important;
+}
+
+.listing-link{
+    text-decoration: none;
+}
+
+.btn-cls{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+.edit-btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* show page */
+.show-img{
+    height: 30vh;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.btns{
+    display: flex;
+}
+
+/* navbar extra */
+
+/* Navbar Search Styles */
+.navbar-search {
+    display: flex;
+    width: auto;
+    max-width: 400px;
+}
+
+.search-text {
+    display: inline;
+}
+
+
+
+.btn-search {
+    color: white;
+    background-color: red;
+    border-radius: 25px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.btn-search:hover {
+    color: white;
+    background-color: darkred;
+}
+
+.btn-search i {
+    margin-right: 0.5rem;
+    padding: 0 1rem 0 0;
+}
+
+
+
+.search-input {
+    border-radius: 25px;
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    min-width: 200px;
+}
+
+/* Glassmorphism for collapsed navbar menu */
+.navbar-collapse {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    padding: 1.25rem 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Center and bold nav items in toggle menu */
+.nav-items-center {
+    text-align: center;
+    width: 100%;
+}
+
+.nav-items-center .nav-link {
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    margin: 0.3rem 0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-items-center .nav-link:hover {
+    background-color: rgba(254, 66, 77, 0.1);
+}
+
+
+
+/* list info */
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+#filters{
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-items: center;
+  flex: 1;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+}
+
+#filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filter{
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  flex-shrink: 0;
+  min-width: 60px;
+}
+
+.filter:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+.tax-info{
+  display: none;
+  
+}
+
+.tax-toggle{
+
+  border: 1px solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+   cursor: pointer;
+}
+
+.form-check, .form-check-input, .form-check-label{
+     cursor: pointer;
+}
+
+
+
+
+/* Ensure Explore link is visible on desktop */
+.navbar-nav.d-md-flex {
+    display: flex !important;
+}
+
+.navbar-nav.d-md-flex .nav-link {
+    display: inline-block !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+
+/* Explore link visibility */
+.explore-desktop {
+    display: inline-block !important;
+    color: black !important;
+    font-weight: 500 !important;
+    margin-left: 0.5rem;
+}
+
+.explore-desktop:hover {
+    color: #fe424d !important;
+}
+
+
+
+/* Active filter styling */
+.active-filter {
+  opacity: 1 !important;
+  border-bottom: 2px solid #fe424d;
+  padding-bottom: 0.1rem;
+}
+
+.filter {
+  transition: all 0.3s ease;
+}
+
+.filter-container{
+    margin-bottom: 1rem;
+}
+
+
+/* Edit form original image preview */
+.original-image-preview {
+    width: 25vw;
+    height: 30vh;
+    filter: blur(1px);
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+/* Show page buttons */
+.btns {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btns form {
+    margin: 0;
+}
+
+
+/* Category Tags Selector */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.category-tags input[type="radio"] {
+    display: none;
+}
+
+.category-tag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.25rem;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: white;
+    min-width: 100px;
+    text-align: center;
+}
+
+.category-tag i {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.category-tag span {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.category-tag:hover {
+    border-color: #fe424d;
+    background-color: rgba(254, 66, 77, 0.05);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-tag:hover i {
+    color: #fe424d;
+}
+
+.category-tags input[type="radio"]:checked + .category-tag {
+    border-color: #fe424d;
+    background-color: rgba(254, 66, 77, 0.1);
+    box-shadow: 0 4px 12px rgba(254, 66, 77, 0.2);
+}
+
+.category-tags input[type="radio"]:checked + .category-tag i {
+    color: #fe424d;
+}
+
+.category-tags input[type="radio"]:checked + .category-tag span {
+    color: #fe424d;
+    font-weight: 600;
+}

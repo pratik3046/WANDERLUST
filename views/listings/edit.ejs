@@ -1,0 +1,123 @@
+<% layout('/layouts/boilerplate')%>
+
+
+
+
+
+
+
+
+    <br><br>
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-2">
+            <h3>EDIT THE LISTING :</h3>
+
+            <form method="post" action="/listings/<%= listing._id  %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-lable">Title : </label>
+                    <input type="text" name="listing[title]" value="<%= listing.title %> " class="form-control"
+                        required>
+                    <div class="valid-feedback">Title looks good!!</div>
+                    <div class="invalid-feedback">Title is unreal!!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="Description">Description : </label>
+                    <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
+                    <div class="invalid-feedback">Enter a valid Description please...</div>
+                </div>
+                <div class="mb-3">
+                     <b>Original Image: </b> <br>
+                    <img src="<%= originalImageUrl %>" alt="" class="img-fluid original-image-preview">
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-lable">Upload a New-Image: </label>
+                    <input type="file" name="listing[image][url]" 
+                        class="form-control" >
+                   
+                </div>
+                <div class="mb-3">
+                    <label for="price" class="form-lable"> Price : </label>
+                    <input type="text" name="listing[price]" value="<%= listing.price %>" class="form-control" >
+                    <div class="invalid-feedback">Price should be valid!!</div>
+
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-lable"> Location : </label>
+                    <input type="text" name="listing[location]" value="<%= listing.location %>" class="form-control"
+                        required>
+                    <div class="invalid-feedback">Location should be valid!!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="country" class="form-lable"> Country : </label>
+                    <input type="text" name="listing[country]" value="<%= listing.country %>" class="form-control"
+                        required>
+                    <div class="invalid-feedback">Country should be valid!!</div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Select Category:</label>
+                    <div class="category-tags">
+                        <input type="radio" name="listing[category]" value="Trending" id="edit-cat-trending" <%= listing.category === 'Trending' ? 'checked' : '' %> required>
+                        <label for="edit-cat-trending" class="category-tag">
+                            <i class="fa-solid fa-fire"></i>
+                            <span>Trending</span>
+                        </label>
+
+                        <input type="radio" name="listing[category]" value="Rooms" id="edit-cat-rooms" <%= listing.category === 'Rooms' ? 'checked' : '' %>>
+                        <label for="edit-cat-rooms" class="category-tag">
+                            <i class="fa-solid fa-bed"></i>
+                            <span>Rooms</span>
+                        </label>
+
+                        <input type="radio" name="listing[category]" value="Iconic Cities" id="edit-cat-cities" <%= listing.category === 'Iconic Cities' ? 'checked' : '' %>>
+                        <label for="edit-cat-cities" class="category-tag">
+                            <i class="fa-solid fa-mountain-city"></i>
+                            <span>Iconic Cities</span>
+                        </label>
+
+                        <input type="radio" name="listing[category]" value="Mountains" id="edit-cat-mountains" <%= listing.category === 'Mountains' ? 'checked' : '' %>>
+                        <label for="edit-cat-mountains" class="category-tag">
+                            <i class="fa-solid fa-mountain"></i>
+                            <span>Mountains</span>
+                        </label>
+
+                        <input type="radio" name="listing[category]" value="Castles" id="edit-cat-castles" <%= listing.category === 'Castles' ? 'checked' : '' %>>
+                        <label for="edit-cat-castles" class="category-tag">
+                            <i class="fa-brands fa-fort-awesome"></i>
+                            <span>Castles</span>
+                        </label>
+
+                        <input type="radio" name="listing[category]" value="Amazing Pools" id="edit-cat-pools" <%= listing.category === 'Amazing Pools' ? 'checked' : '' %>>
+                        <label for="edit-cat-pools" class="category-tag">
+                            <i class="fa-solid fa-person-swimming"></i>
+                            <span>Amazing Pools</span>
+                        </label>
+
+                        <input type="radio" name="listing[category]" value="Camping" id="edit-cat-camping" <%= listing.category === 'Camping' ? 'checked' : '' %>>
+                        <label for="edit-cat-camping" class="category-tag">
+                            <i class="fa-solid fa-campground"></i>
+                            <span>Camping</span>
+                        </label>
+
+                        <input type="radio" name="listing[category]" value="Farms" id="edit-cat-farms" <%= listing.category === 'Farms' ? 'checked' : '' %>>
+                        <label for="edit-cat-farms" class="category-tag">
+                            <i class="fa-solid fa-cow"></i>
+                            <span>Farms</span>
+                        </label>
+
+                        <input type="radio" name="listing[category]" value="Arctic" id="edit-cat-arctic" <%= listing.category === 'Arctic' ? 'checked' : '' %>>
+                        <label for="edit-cat-arctic" class="category-tag">
+                            <i class="fa-solid fa-snowflake"></i>
+                            <span>Arctic</span>
+                        </label>
+                    </div>
+                    <div class="invalid-feedback">Please select a category</div>
+                </div>
+
+                <button class="btn btn-dark edit-btn">edit</button>
+            </form>
+        </div>
+    </div>
+    <br><br>
