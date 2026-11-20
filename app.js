@@ -1,3 +1,6 @@
+const dns = require("dns");
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
+
 const express = require("express")
 
 const app = express()
@@ -45,7 +48,7 @@ app.engine('ejs', ejsMate)
 app.use(express.static(path.join(__dirname, "/public"))) //static file serve
 app.use('/uploads', express.static(path.join(__dirname, "/uploads"))) //serve uploaded files
 
-const port = 8080
+const port = process.env.PORT || 8080;
 
 // const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust"
 const db_url = process.env.ATLASDB_URL;
@@ -63,10 +66,12 @@ async function main() {
     });
 }
 
-const store = new MongoStore({
+const store = MongoStore.create({
     mongoUrl: db_url,
+    crypto: {
+        secret: process.env.SECRET || "thisshouldbeabettersecret!",
+    },
     touchAfter: 24 * 3600,
-   
 });
 
 store.on("error", (err) => {
@@ -75,7 +80,7 @@ store.on("error", (err) => {
 
 const sessionOptions = {
     store: store,
-    secret: process.env.SECRET,
+    secret: process.env.SECRET || "thisshouldbeabettersecret!",
     resave: false,
     saveUninitialized: true,
     cookie: {
